@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
             message.text = it
         })
 
+        viewModel.getQuiz(10)
+
         send.setOnClickListener {
             if (edit_message.text.toString().isNotEmpty()){
                 viewModel.setMessage(edit_message.text.toString())

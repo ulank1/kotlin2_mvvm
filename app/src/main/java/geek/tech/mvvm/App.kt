@@ -1,6 +1,7 @@
 package geek.tech.mvvm
 
 import android.app.Application
+import geek.tech.mvvm.di.networkModule
 import geek.tech.mvvm.di.repositoryModule
 import geek.tech.mvvm.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -15,7 +16,7 @@ class App:Application() {
         startKoin {
             androidLogger(Level.NONE)
             androidContext(this@App)
-            modules(listOf(viewModelModule, repositoryModule))
+            modules(listOf(viewModelModule, repositoryModule, networkModule))
         }
     }
 
